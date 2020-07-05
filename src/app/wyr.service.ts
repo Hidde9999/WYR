@@ -11,15 +11,22 @@ import {WyrObject} from './WyrObject';
 export class WyrService {
   constructor(private httpClient: HttpClient) {
   }
-
-  getWyr(authorizationToken: string): Observable<WyrObject> {
-    return this.httpClient.post<WyrObject>('http://localhost/api/wyr/api.php', {
+  
+  saveWyr(authorizationToken: string, wyrObject: WyrObject): Observable<void> {
+    return this.httpClient.post<any>(`https://etihv.nl/api/wyr/api.php`, wyrObject, {
       headers: {
         Authorization: authorizationToken,
       }
-    }).pipe(
-      retry(0),
-    );
+    });
   }
 
+  getWyr(authorizationToken: string): Observable<WyrObject[]> {
+    return this.httpClient.get<WyrObject[]>(`https://etihv.nl/api/wyr/api.php`, {
+      headers: {
+        Authorization: authorizationToken,
+      }
+    });
+  }
+  
 }
+

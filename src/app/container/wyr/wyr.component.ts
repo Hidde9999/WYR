@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {WyrObject} from "../../WyrObject";
 
 @Component({
   selector: 'app-wyr',
@@ -15,10 +16,15 @@ export class WyrComponent implements OnInit {
   OptionOneProcent = 0;
   OptionTwoProcent = 0;
 
+  @Input() wyrObjs: WyrObject[];
+
+  wyrQuestion: string = "niets";
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit() {
+    console.log("hier istie: " + this.wyrObjs)
+  }
 
   iscliked(op) {
     this.OptionAmount++;
@@ -32,9 +38,7 @@ export class WyrComponent implements OnInit {
     }
     this.OptionOneProcent = 100 / this.OptionAmount * this.OptionOneAmount;
     this.OptionTwoProcent = 100 / this.OptionAmount * this.OptionTwoAmount;
-
-
-
+    
     console.log(this.OptionClicked);
   }
 

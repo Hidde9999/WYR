@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {WyrObject} from "../WyrObject";
 
 @Component({
   selector: 'app-container',
@@ -7,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContainerComponent implements OnInit {
 
+  @Input() wyrObjs: WyrObject[];
+  
   constructor() { }
 
   ngOnInit(): void {

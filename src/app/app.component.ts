@@ -15,10 +15,13 @@ export class AppComponent implements OnInit {
     question: 'In an unlucky survival situation, would you rather...',
     keuze1: 'Go swimming with sharks',
     keuze2: 'Go swimming with alligators',
-    keuze1aantal: 0,
-    keuze2aantal: 0,
-    totaal: 0
+    keuze1aantal: 100,
+    keuze2aantal: 90,
+    totaal: 190
   };
+  
+  wyrObjectsTerug: WyrObject[];
+  errorTextInComponent = '';
 
   constructor(
     private wyrService: WyrService) {
@@ -26,15 +29,27 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.checkAuthCode('11111');
+    this.doedit();
   }
 
-    checkAuthCode(code) {
+  checkAuthCode(code) {
       code = '11111';
-      this.wyrService.getWyr(code).subscribe(wyrObject => {
-        this.wyr = wyrObject;
-        console.log(this.wyr);
-      }, error => {
-        console.log(this.wyr);
-      });
+
+      //SAVE OBJECT
+      // this.wyrService.saveWyr(code, this.wyr).subscribe(() => {
+      //   // this.customer.name = null;
+      // });
+
+      //GET OBJECTS
+      this.wyrService.getWyr(code).subscribe(wyrObjects => {
+        this.wyrObjectsTerug = wyrObjects;
+        }, error => {
+          this.errorTextInComponent = error;
+        })
   }
+  
+  doedit() {
+    console.log("terug : " + this.wyrObjectsTerug);
+  }
+  
 }
