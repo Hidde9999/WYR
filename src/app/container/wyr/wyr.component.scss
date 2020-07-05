@@ -1,0 +1,98 @@
+$background-color: #494949;
+$font-color: white;
+$option-font-color: black;
+
+$color-left: red;
+$color-right: dodgerblue;
+$color-left-hover: darkred;
+$color-right-hover: blue;
+
+.black-background{
+  position: relative;
+  top: 0;
+  left: -10px;
+  width: 101.1%;
+  background-color: $background-color;
+  padding-bottom: 100px;
+}
+
+.wyr-container{
+  width: 75%;
+  margin: 0 auto;
+
+  .question{
+    color: $font-color;
+    padding-top: 20px;
+  }
+
+  .wyr-option{
+    display: inline-block;
+    width: 45%;
+    padding-left: 15px;
+    height: 300px;
+    cursor: pointer;
+    color: $option-font-color;
+
+    -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    box-shadow:0 1px 4px rgba(255, 255, 255, 0.3), 0 0 40px rgba(255, 255, 255, 0.1) inset;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  .wyr-option:before, .wyr-option:after
+  {
+    content:"";
+    position:absolute;
+    z-index:-1;
+    -webkit-box-shadow:0 0 20px rgba(0,0,0,0.8);
+    -moz-box-shadow:0 0 20px rgba(0,0,0,0.8);
+    box-shadow:0 0 20px rgba(255, 255, 255, 0.8);
+    top:50%;
+    bottom:0;
+    left:10px;
+    right:10px;
+    -moz-border-radius:100px / 10px;
+    border-radius:100px / 10px;
+  }
+  .wyr-option:after
+  {
+    right:10px;
+    left:auto;
+    -webkit-transform:skew(8deg) rotate(3deg);
+    -moz-transform:skew(8deg) rotate(3deg);
+    -ms-transform:skew(8deg) rotate(3deg);
+    -o-transform:skew(8deg) rotate(3deg);
+    transform:skew(8deg) rotate(3deg);
+  }
+
+  .left{
+    background-color: $color-left;
+    margin-right: 7%;
+  }
+
+  .left:hover{
+    background-color: $color-left-hover;
+  }
+
+  .right{
+    background-color: $color-right;
+  }
+
+  .right:hover{
+    background-color: $color-right-hover;
+  }
+}
+
+.wyr-result{
+  position: absolute;
+  width: 75%;
+  margin: 0 auto;
+  bottom: 100px;
+  //display: none;
+}

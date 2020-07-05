@@ -1,0 +1,24 @@
+<div class="black-background">
+  <div class="wyr-container">
+    <div class="question">
+      <h2>Question placeholder</h2>
+    </div>
+    <div class="wyr-option left" (click)="iscliked(1)">
+      <h3>Left placeholder</h3>
+    </div>
+    <div class="wyr-option right" (click)="iscliked(2)">
+      <h3>Right placeholder</h3>
+    </div>
+
+    <div *ngIf="OptionClicked > 0" class="wyr-result">
+      <div class="wyr-option left" (click)="next()">
+        <h3>{{this.OptionOneAmount}}</h3>
+        <h3>{{this.OptionOneProcent.toFixed(2) }}%</h3>
+      </div>
+      <div class="wyr-option right" (click)="next()">
+        <h3>{{this.OptionTwoAmount}}</h3>
+        <h3>{{this.OptionTwoProcent.toFixed(2) }}%</h3>
+      </div>
+    </div>
+  </div>
+</div>

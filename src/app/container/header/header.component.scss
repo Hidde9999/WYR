@@ -1,0 +1,74 @@
+$header-background-color: lightgray;
+$header-font-color: black;
+$header-font-hover-color: black;
+$header-background-hover-color: #8d0000;
+$header-font-active-color: white;
+$header-background-active-color: dodgerblue;
+$header-height: 90px;
+
+
+.header-container{
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 100%;
+  .header {
+    overflow: hidden;
+    background-color: $header-background-color;
+    padding: 20px 10px;
+  }
+
+  .header a {
+    float: left;
+    color: $header-font-color;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 25px;
+    border-radius: 4px;
+  }
+
+  .header a.logo {
+    font-size: 25px;
+    font-weight: bold;
+  }
+
+  .header a:hover {
+    background-color: $header-background-hover-color;
+    color: $header-font-hover-color;
+  }
+
+  .header a.active {
+    background-color: $header-background-active-color;
+    color: $header-font-active-color;
+  }
+
+  .header-right {
+    float: right;
+  }
+
+  @media screen and (max-width: 500px) {
+    position: relative;
+    .header a {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+
+    .header-right {
+      float: none;
+    }
+  }
+}
+
+.header-container-fix{
+  position: relative;
+  top: 0;
+  left:0;
+  height: $header-height;
+  @media screen and (max-width: 500px) {
+    height: 0;
+  }
+}
