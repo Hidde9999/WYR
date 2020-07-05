@@ -11,7 +11,7 @@ import {WyrObject} from './WyrObject';
 export class WyrService {
   constructor(private httpClient: HttpClient) {
   }
-  
+
   saveWyr(authorizationToken: string, wyrObject: WyrObject): Observable<void> {
     return this.httpClient.post<any>(`https://etihv.nl/api/wyr/api.php`, wyrObject, {
       headers: {
@@ -27,6 +27,5 @@ export class WyrService {
       }
     });
   }
-  
 }
 
