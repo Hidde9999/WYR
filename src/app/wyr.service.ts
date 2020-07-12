@@ -43,6 +43,5 @@ export class WyrService {
     console.log("error = " + errorMessage);
     return throwError(errorMessage);
   }
-  
 }
 
