@@ -15,23 +15,23 @@ export class AppComponent implements OnInit {
   // errorTextInComponent = '';
 
   ngOnInit() {
-    // this.checkAuthCode('11111');
+      // this.checkAuthCode('11111');
   }
 
   // checkAuthCode(code) {
   //     code = '11111';
   //
   //     //SAVE OBJECT
-  //     // this.wyrService.saveWyr(code, this.wyr).subscribe(() => {
-  //     //   // this.customer.name = null;
-  //     // });
+  //     this.wyrService.saveWyr(code, this.wyr).subscribe(() => {
+  //       // this.customer.name = null;
+  //     });
   //
   //     //GET OBJECTS
-  //     this.wyrService.getWyr(code).subscribe(wyrObjects => {
-  //       this.wyrObjects = wyrObjects;
-  //       }, error => {
-  //         this.errorTextInComponent = error;
-  //       })
+  //     // this.wyrService.getWyr(code).subscribe(wyrObjects => {
+  //     //   this.wyrObjects = wyrObjects;
+  //     //   }, error => {
+  //     //     this.errorTextInComponent = error;
+  //     //   })
   // }
   
 }

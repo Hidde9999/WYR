@@ -1,19 +1,13 @@
 <div class="black-background">
-  <div class="wyr-container">
-<<<<<<< HEAD
-
-    <button type="button" (click)="showresult()">klik hier</button>
-    
-    <div class="question" *ngFor="let obj of wyrObjects">
+  <div class="wyr-container" *ngFor="let obj of wyrObjects">
+    <div class="question">
       <h2>{{obj.question}}</h2>
-    <div class="question" *ngFor="let obj of wyrObjects">
-      <h2>{{obj.question}}}</h2>
     </div>
     <div class="wyr-option left" (click)="iscliked(1)">
-      <h3>Left placeholder</h3>
+      <h3>{{obj.keuze1}}</h3>
     </div>
     <div class="wyr-option right" (click)="iscliked(2)">
-      <h3>Right placeholder</h3>
+      <h3>{{obj.keuze2}}</h3>
     </div>
 
     <div *ngIf="OptionClicked > 0" class="wyr-result">
