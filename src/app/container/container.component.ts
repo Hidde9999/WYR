@@ -7,8 +7,6 @@ import {WyrObject} from "../WyrObject";
   styleUrls: ['./container.component.scss']
 })
 export class ContainerComponent implements OnInit {
-
-  @Input() wyrObjs: WyrObject[];
   
   constructor() { }
 

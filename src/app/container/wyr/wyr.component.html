@@ -1,7 +1,10 @@
 <div class="black-background">
   <div class="wyr-container">
-    <div class="question" *ngFor="let obj of wyrObjs">
-      <h2>HIIIEEEERRR {{wyrQuestion}}</h2>
+
+    <button type="button" (click)="showresult()">klik hier</button>
+    
+    <div class="question" *ngFor="let obj of wyrObjects">
+      <h2>HIIIEEEERRR {{obj.question}}</h2>
     </div>
     <div class="wyr-option left" (click)="iscliked(1)">
       <h3>Left placeholder</h3>
