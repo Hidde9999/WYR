@@ -40,22 +40,17 @@ export class WyrComponent implements OnInit {
   checkAuthCode(code) {
     code = '11111';
 
-    //SAVE OBJECT
+    // SAVE OBJECT
     // this.wyrService.saveWyr(code, this.wyr).subscribe(() => {
     // });
 
-    //GET OBJECTS
+    // GET OBJECTS
     this.wyrService.getWyr(code).subscribe(wyrObjects => {
       this.wyrObjects = wyrObjects;
     }, error => {
       this.errorTextInComponent = error;
     })
   }
-  
-  showresult() {
-    console.log("Resultaat = " + this.wyrObjects)
-  }
-  
   
   iscliked(op) {
     this.OptionAmount++;

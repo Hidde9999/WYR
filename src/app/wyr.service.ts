@@ -26,7 +26,7 @@ export class WyrService {
         Authorization: authorizationToken,
       }, responseType: "json"
     }).pipe(
-      retry(0),
+      retry(1),
       catchError(this.handleError)
     );
   }
