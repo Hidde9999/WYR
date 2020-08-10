@@ -20,8 +20,8 @@ export class WyrService {
     });
   }
 
-  getWyr(authorizationToken: string): Observable<WyrObject[]> {
-    return this.httpClient.get<WyrObject[]>(`https://etihv.nl/api/wyr/api.php`, {
+  getWyr(authorizationToken: string): Observable<WyrObject> {
+    return this.httpClient.get<WyrObject>(`https://etihv.nl/api/wyr/api.php`, {
       headers: {
         Authorization: authorizationToken,
       }, responseType: "json"

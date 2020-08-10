@@ -10,13 +10,13 @@ import {WyrService} from "../../wyr.service";
 export class WyrComponent implements OnInit {
   // vars
   OptionClicked = 0;
-  OptionOneAmount = 123;
-  OptionTwoAmount = 234;
-  OptionAmount = 357;
+  OptionOneAmount = 99;
+  OptionTwoAmount = 99;
+  OptionAmount = 198;
   OptionOneProcent = 0;
   OptionTwoProcent = 0;
 
-  wyr: WyrObject = {
+  wyrObjStub: WyrObject = {
     id: 1,
     question: 'Een hele mooie vraag ...',
     keuze1: 'Antwoord 1',
@@ -26,7 +26,7 @@ export class WyrComponent implements OnInit {
     totaal: 5
   };
 
-  wyrObjects: WyrObject[];
+  wyrObject: WyrObject = this.wyrObjStub;
   errorTextInComponent = '';
 
   constructor(
@@ -45,10 +45,21 @@ export class WyrComponent implements OnInit {
     // });
 
     // GET OBJECTS
-    this.wyrService.getWyr(code).subscribe(wyrObjects => {
-      this.wyrObjects = wyrObjects;
+    this.wyrService.getWyr(code).subscribe(wyrObject => {
+ 
+      this.wyrObject = wyrObject;
+      
+      this.OptionOneAmount = this.wyrObject.keuze1aantal;
+      this.OptionTwoAmount = this.wyrObject.keuze2aantal;
+      this.OptionAmount = this.wyrObject.totaal;
     }, error => {
       this.errorTextInComponent = error;
+
+      this.wyrObject = this.wyrObjStub;
+      
+      this.OptionOneAmount = this.wyrObject.keuze1aantal;
+      this.OptionTwoAmount = this.wyrObject.keuze2aantal;
+      this.OptionAmount = this.wyrObject.totaal;
     })
   }
   
